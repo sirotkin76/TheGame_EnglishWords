@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A0B23A79-15C9-4F0E-0FD9-1F3F1AC63FF1}</ProjectGuid>
+    <ProjectGuid>{2735B3E0-A1F3-8BE3-BFF8-70F4CC163C68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,13 +46,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AsyncLoadProgress.cs" />
-     <Compile Include="Assets\Scripts\KeyManager.cs" />
      <Compile Include="Assets\Scripts\Keyboard\Key.cs" />
      <Compile Include="Assets\Scripts\Keyboard\KeyValue.cs" />
      <Compile Include="Assets\Scripts\Keyboard\Keyboard.cs" />
-     <Compile Include="Assets\Scripts\PlayerData.cs" />
-     <Compile Include="Assets\Scripts\SettingsGame.cs" />
+     <Compile Include="Assets\Scripts\Other\AsyncLoadProgress.cs" />
+     <Compile Include="Assets\Scripts\Other\KeyManager.cs" />
+     <Compile Include="Assets\Scripts\Other\PlayerData.cs" />
+     <Compile Include="Assets\Scripts\Other\SettingsGame.cs" />
      <Compile Include="Assets\Scripts\Word\LatterValue.cs" />
      <Compile Include="Assets\Scripts\Word\NewWord.cs" />
      <Compile Include="Assets\Scripts\loadTxt.cs" />

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerData : ScriptableObject {
 
-	[HideInInspector]
+	//[HideInInspector]
 	public int Score;
-	[HideInInspector]
+	//[HideInInspector]
 	public int Trying;
-	[HideInInspector]
+	//[HideInInspector]
 	public int QuessedWord;
 
 	public int DefaultTry;
@@ -19,9 +19,9 @@ public class PlayerData : ScriptableObject {
 
 	public bool OftenRepeatedWords;
 
-	[HideInInspector]
+	//[HideInInspector]
 	public int iStart;
-	[HideInInspector]
+	//[HideInInspector]
 	public int iFinish;
 
 }

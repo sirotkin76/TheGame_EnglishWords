@@ -19,17 +19,21 @@ public class NewWord : MonoBehaviour {
 
 	public List<string> list;
 
+	public KeyManager keyManag;
+
 	bool timerRing;
 	float timer = 0;
 	int countWord;
 	string w;
-	
-	void Start () {
-
-	}
 
 	public void SetNewWord() {
-		if (list.Count == 0) return;
+		 // Слов больше нет
+		if (list.Count - (data.iFinish + data.iStart) == 0) {
+			data.iFinish = 0;
+			data.iStart = 0;
+			SetNewWord();
+			return;
+		};
 
 		// Проверяем условия отбора слова
 		if (data.OftenRepeatedWords) w = list[data.iStart]; // часто повторяемые слова ищем слова с конца
@@ -48,6 +52,8 @@ public class NewWord : MonoBehaviour {
 		textGuessedTheWords.text = data.QuessedWord.ToString();
 
 		countWord = w.Length;
+
+		keyManag.SaveGame();
 	}
 
 	public void CompareLatter(char c) {
@@ -93,9 +99,8 @@ public class NewWord : MonoBehaviour {
 				timer = 0;
 				SetNewWord();
 			}
-			else {
-				timer += Time.deltaTime;
-			}
+			else timer += Time.deltaTime;
+			
 
 		}
 	}

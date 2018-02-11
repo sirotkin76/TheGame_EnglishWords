@@ -15,20 +15,24 @@ Platform assembly: F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\UnityEng
 Loading F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.018 seconds
+- Completed reload, in  0.017 seconds
 Platform assembly: F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.277399 ms
+UnloadTime: 3.505316 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.175930 ms
+UnloadTime: 0.448554 ms
+Load
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 686.
-Total: 0.724501 ms (FindLiveObjects: 0.044328 ms CreateObjectMapping: 0.023549 ms MarkObjects: 0.613955 ms  DeleteObjects: 0.042112 ms)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 734.
+Total: 0.747220 ms (FindLiveObjects: 0.039342 ms CreateObjectMapping: 0.022995 ms MarkObjects: 0.605091 ms  DeleteObjects: 0.079238 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 16c4 -> priority: 1 
-  Thread -> id: 1020 -> priority: 1 
+  Thread -> id: 21d8 -> priority: 1 
+  Thread -> id: 2278 -> priority: 1 

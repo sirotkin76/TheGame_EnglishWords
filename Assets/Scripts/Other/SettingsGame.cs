@@ -39,6 +39,7 @@ public class SettingsGame : MonoBehaviour {
 
 		transform.GetChild(0).transform.gameObject.SetActive(true);
 		transform.GetChild(1).transform.gameObject.SetActive(false);
+		transform.GetChild(2).transform.gameObject.SetActive(false);
 
 		data.Trying = data.DefaultTry;
 		data.iFinish = 0;
