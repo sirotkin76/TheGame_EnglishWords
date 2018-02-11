@@ -21,10 +21,30 @@ public class NewWord : MonoBehaviour {
 
 	public KeyManager keyManag;
 
+	public AudioClip audioSuccses;
+	public AudioClip audioFail;
+
+	private AudioSource source;
+
 	bool timerRing;
 	float timer = 0;
 	int countWord;
 	string w;
+
+	void Start() {
+		source = GetComponent<AudioSource>();
+	}
+
+	void FixedUpdate() {
+		if (timerRing) {
+			if (timer >= 1.5f) {
+				timerRing = false;
+				timer = 0;
+				SetNewWord();
+			}
+			else timer += Time.deltaTime;
+		}
+	}
 
 	public void SetNewWord() {
 		 // Слов больше нет
@@ -65,6 +85,9 @@ public class NewWord : MonoBehaviour {
 			if ( c.ToString().ToUpper() == letter.ToString().ToUpper()) {
 				// Открываем букву
 				transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<Text>().enabled = true;
+				
+				source.clip = audioSuccses;
+				source.Play();
 
 				// Прибавляем очков
 				data.Score += data.DefaultScoreOneLetter;
@@ -88,21 +111,16 @@ public class NewWord : MonoBehaviour {
 			else data.iFinish++; // ищем слова с начала так как список уже отсортирован
 		}
 
-		if (!res) canvasFunc.gameObject.GetComponent<SettingsGame>().DeductTry(); // Вычитаем попытки
-	
-	}
-
-	void FixedUpdate() {
-		if (timerRing) {
-			if (timer >= 1.5f) {
-				timerRing = false;
-				timer = 0;
-				SetNewWord();
-			}
-			else timer += Time.deltaTime;
+		if (!res) {
+			canvasFunc.gameObject.GetComponent<SettingsGame>().DeductTry(); // Вычитаем попытки
 			
-
+			if (data.fOtherMusic != 0) {
+				source.clip = audioFail;
+				source.volume = data.fOtherMusic;
+				source.Play();
+			}
 		}
+	
 	}
 
 }

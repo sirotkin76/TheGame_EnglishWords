@@ -46,16 +46,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Keyboard\Key.cs" />
-     <Compile Include="Assets\Scripts\Keyboard\KeyValue.cs" />
-     <Compile Include="Assets\Scripts\Keyboard\Keyboard.cs" />
-     <Compile Include="Assets\Scripts\Other\AsyncLoadProgress.cs" />
-     <Compile Include="Assets\Scripts\Other\KeyManager.cs" />
-     <Compile Include="Assets\Scripts\Other\PlayerData.cs" />
-     <Compile Include="Assets\Scripts\Other\SettingsGame.cs" />
-     <Compile Include="Assets\Scripts\Word\LatterValue.cs" />
-     <Compile Include="Assets\Scripts\Word\NewWord.cs" />
-     <Compile Include="Assets\Scripts\loadTxt.cs" />
+     <Compile Include="Assets\Scripts\Menu\AsyncLoadProgress.cs" />
+     <Compile Include="Assets\Scripts\Menu\Menu.cs" />
+     <Compile Include="Assets\Scripts\PlayerData.cs" />
+     <Compile Include="Assets\Scripts\Scene01\KeyManager.cs" />
+     <Compile Include="Assets\Scripts\Scene01\Keyboard\Key.cs" />
+     <Compile Include="Assets\Scripts\Scene01\Keyboard\KeyValue.cs" />
+     <Compile Include="Assets\Scripts\Scene01\Keyboard\Keyboard.cs" />
+     <Compile Include="Assets\Scripts\Scene01\SettingsGame.cs" />
+     <Compile Include="Assets\Scripts\Scene01\Word\LatterValue.cs" />
+     <Compile Include="Assets\Scripts\Scene01\Word\NewWord.cs" />
+     <Compile Include="Assets\Scripts\Scene01\loadTxt.cs" />
      <None Include="Assets\Resources\alice30.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Programm/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -12,12 +12,17 @@ public class loadTxt : MonoBehaviour {
 	public string txtFile = "alice30"; // имя документа с английским текстом
 	public Dictionary<string, int> dicString = new Dictionary<string, int> {};
 	public GameObject newWorld; // Куда будем передавать словарь со словами
+	public GameObject resetGame;
+
+	private AudioSource basicAudio;
 
 	string str, str1;
 
 	void Start () {
 		TextAsset txtAssets = (TextAsset)Resources.Load(txtFile);
 		str = txtAssets.ToString();
+
+		basicAudio = GetComponent<AudioSource>();
 
 		for (int i = 0; i < str.Length; i++) {
 			if (Char.IsLetter(str[i])) str1 = str1+str[i];
@@ -33,33 +38,41 @@ public class loadTxt : MonoBehaviour {
 
 		LoadGame();
 
+		if (data.fBasicMusic == 0) basicAudio.Stop();
+		else {
+			basicAudio.volume = data.fBasicMusic;
+			basicAudio.Play();
+		}
+
 		dicString = dicString.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
 		newWorld.GetComponent<NewWord>().list = dicString.Keys.ToList();
-		newWorld.GetComponent<NewWord>().SetNewWord();
+		
+
+		if (!data.RestartGame) newWorld.GetComponent<NewWord>().SetNewWord();
+		else resetGame.GetComponent<SettingsGame>().ResetNewGame();
+
+		data.RestartGame = false;
 	}
 
 	void LoadGame() {
-		if (PlayerPrefs.HasKey("Score")) {
+		# region PlayerPrefs
+		data.Score = PlayerPrefs.GetInt("Score");
+		data.Trying = PlayerPrefs.GetInt("Trying");
+		data.QuessedWord = PlayerPrefs.GetInt("QuessedWord");
+		data.DefaultTry = PlayerPrefs.GetInt("DefaultTry");
+		data.DefaultScoreOneLetter = PlayerPrefs.GetInt("DefaultScoreOneLetter");
+		data.MaxLengthWord = PlayerPrefs.GetInt("MaxLengthWord");
+		data.MinLengthWord = PlayerPrefs.GetInt("MinLengthWord");
 
-			Debug.Log ("Load");
+		if (PlayerPrefs.GetInt("OftenRepeatedWords") == 1) data.OftenRepeatedWords = true;
+		else data.OftenRepeatedWords = false;
 
-			# region PlayerPrefs.GetInt
-				data.Score = PlayerPrefs.GetInt("Score");
-				data.Trying = PlayerPrefs.GetInt("Trying");
-				data.QuessedWord = PlayerPrefs.GetInt("QuessedWord");
-				data.DefaultTry = PlayerPrefs.GetInt("DefaultTry");
-				data.DefaultScoreOneLetter = PlayerPrefs.GetInt("DefaultScoreOneLetter");
-				data.MaxLengthWord = PlayerPrefs.GetInt("MaxLengthWord");
-				data.MinLengthWord = PlayerPrefs.GetInt("MinLengthWord");
+		data.iStart = PlayerPrefs.GetInt("iStart");
+		data.iFinish = PlayerPrefs.GetInt("iFinish");
 
-				if (PlayerPrefs.GetInt("OftenRepeatedWords") == 1) data.OftenRepeatedWords = true;
-				else data.OftenRepeatedWords = false;
+		data.fBasicMusic = PlayerPrefs.GetFloat("fBasicMusic");
+		data.fOtherMusic = PlayerPrefs.GetFloat("fOtherMusic");
 
-				data.iStart = PlayerPrefs.GetInt("iStart");
-				data.iFinish = PlayerPrefs.GetInt("iFinish");
-			#endregion
-
-		}
-
+		#endregion
 	}
 }

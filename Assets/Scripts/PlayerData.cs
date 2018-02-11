@@ -23,5 +23,11 @@ public class PlayerData : ScriptableObject {
 	public int iStart;
 	//[HideInInspector]
 	public int iFinish;
+	//[HideInInspector]
+	public float fBasicMusic;
+	//[HideInInspector]
+	public float fOtherMusic;
+
+	public bool RestartGame;
 
 }

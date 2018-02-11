@@ -39,8 +39,12 @@ public class KeyManager : MonoBehaviour {
 
 	public void ExitGame() {
 		SaveGame();
-
 		Application.Quit();
+	}
+
+	public void ExitMenu() {
+		SaveGame();
+		Application.LoadLevel("Menu");
 	}
 
 	public void SaveGame() {
@@ -58,6 +62,9 @@ public class KeyManager : MonoBehaviour {
 
 		PlayerPrefs.SetInt("iStart", data.iStart);
 		PlayerPrefs.SetInt("iFinish", data.iFinish);
+
+		PlayerPrefs.SetFloat("fBasicMusic", data.fBasicMusic);
+		PlayerPrefs.SetFloat("fOtherMusic", data.fOtherMusic);
 
 		PlayerPrefs.Save();
 
