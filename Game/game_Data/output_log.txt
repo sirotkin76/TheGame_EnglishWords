@@ -15,20 +15,20 @@ Platform assembly: F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\UnityEng
 Loading F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.021 seconds
+- Completed reload, in  0.022 seconds
 Platform assembly: F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\Unity\TheGame_EnglishWords\Game\game_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.116260 ms
+UnloadTime: 3.627504 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.388329 ms
+UnloadTime: 1.453994 ms
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 395.
-Total: 0.251290 ms (FindLiveObjects: 0.011913 ms CreateObjectMapping: 0.011359 ms MarkObjects: 0.208623 ms  DeleteObjects: 0.019393 ms)
+Total: 0.288693 ms (FindLiveObjects: 0.014961 ms CreateObjectMapping: 0.013298 ms MarkObjects: 0.231896 ms  DeleteObjects: 0.025489 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 18ac -> priority: 1 
-  Thread -> id: 283c -> priority: 1 
+  Thread -> id: 1b14 -> priority: 1 
+  Thread -> id: 18d0 -> priority: 1 
